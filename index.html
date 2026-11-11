@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b52">
+  <title>NextIT 2026 | 클라우드로 옮기기 전에, 보안부터</title>
+  <style>
+    :root{--navy:#102b52;--blue:#2563eb;--sky:#eaf2ff;--ink:#182338;--muted:#64748b;--line:#dce4ef;--bg:#f5f7fb;--white:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6;word-break:keep-all}
+    .notice{padding:9px 16px;text-align:center;color:#fff;background:#173f75;font-size:13px;font-weight:700;letter-spacing:.02em}
+    .hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 82% 18%,rgba(73,154,255,.35),transparent 27%),radial-gradient(circle at 12% 100%,rgba(37,99,235,.25),transparent 35%),linear-gradient(135deg,#0b1f3c 0%,#123c70 58%,#1764a5 100%)}
+    .hero::after{content:"";position:absolute;width:430px;height:430px;right:-170px;bottom:-280px;border:1px solid rgba(255,255,255,.22);border-radius:50%;box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 75px rgba(255,255,255,.025),0 0 0 120px rgba(255,255,255,.02);pointer-events:none}
+    .hero-inner,.container,.footer-inner{width:min(100% - 40px,1060px);margin:0 auto}.hero-inner{position:relative;z-index:1;padding:76px 0 72px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(255,255,255,.32);border-radius:999px;color:#dbeafe;font-size:13px;font-weight:700;letter-spacing:.08em}.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#7dd3fc;box-shadow:0 0 12px #7dd3fc}
+    h1{max-width:760px;margin:24px 0 18px;font-size:clamp(34px,6vw,60px);line-height:1.16;letter-spacing:-.055em}h1 span{color:#91caff}
+    .hero-copy{max-width:650px;margin:0;color:#dce9f8;font-size:clamp(15px,2vw,18px)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:32px;color:#fff;font-size:14px;font-weight:600}.hero-meta span{display:inline-flex;align-items:center;gap:8px}.hero-meta b{color:#9acbff;font-size:17px}
+    .hero-cta{display:inline-flex;align-items:center;justify-content:center;min-height:50px;margin-top:34px;padding:0 24px;border-radius:8px;color:#102b52;background:#fff;text-decoration:none;font-weight:800;transition:transform .2s,box-shadow .2s}.hero-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px #07172b55}
+    main{padding:54px 0 80px}.section{margin-bottom:54px}.section-kicker{margin:0 0 8px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.12em}
+    h2{margin:0 0 14px;color:var(--navy);font-size:clamp(23px,3.4vw,32px);line-height:1.3;letter-spacing:-.04em}.intro{max-width:780px;margin:0;color:#526176;font-size:16px}
+    .topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}.topic{min-height:150px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--white)}.topic .num{display:inline-block;margin-bottom:14px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.08em}.topic h3{margin:0 0 7px;color:var(--navy);font-size:17px}.topic p{margin:0;color:var(--muted);font-size:14px}
+    .schedule{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff}.schedule-row{display:grid;grid-template-columns:145px 1fr;gap:18px;padding:18px 22px;border-bottom:1px solid #edf1f6}.schedule-row:last-child{border-bottom:0}.schedule-time{color:var(--blue);font-size:14px;font-weight:800}.schedule-title{margin:0 0 3px;color:var(--navy);font-weight:800}.schedule-desc{margin:0;color:var(--muted);font-size:14px}
+    .form-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start;padding:30px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 12px 36px rgba(18,45,82,.06)}.form-aside{padding:8px 8px 8px 0}.form-aside p{color:var(--muted);font-size:14px}.form-aside .free{display:inline-block;margin-top:12px;padding:7px 11px;border-radius:7px;color:#1d4ed8;background:var(--sky);font-size:13px;font-weight:800}
+    form{display:grid;gap:16px}.field{display:grid;gap:7px}label,legend{color:#26364e;font-size:14px;font-weight:750}.required{color:#e05252}
+    input,select{width:100%;min-height:46px;padding:11px 13px;border:1px solid #cfd9e6;border-radius:8px;color:var(--ink);background:#fff;font:inherit;font-size:14px;outline:none}input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12)}input::placeholder{color:#9aa7b8}
+    fieldset{min-width:0;margin:0;padding:0;border:0}.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:9px}.check{display:flex;align-items:center;gap:9px;min-height:42px;padding:9px 11px;border:1px solid #dce4ef;border-radius:8px;color:#475569;font-size:13px;font-weight:500;cursor:pointer}.check input{width:16px;min-height:16px;margin:0;accent-color:var(--blue)}
+    .submit{width:100%;min-height:52px;margin-top:4px;border:0;border-radius:9px;color:#fff;background:var(--blue);font:inherit;font-weight:800;cursor:pointer;transition:background .2s,transform .2s}.submit:hover{background:#1d4ed8;transform:translateY(-1px)}.privacy{margin:-4px 0 0;color:#8793a4;font-size:11px}
+    .success{display:none;padding:24px;border:1px solid #b8e2cb;border-radius:12px;color:#17623a;background:#effaf3;text-align:center}.success strong{display:block;margin-bottom:6px;font-size:19px}
+    footer{padding:25px 0;color:#aab7c8;background:#0b1f3c;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:720px){.hero-inner{padding:56px 0 54px}.hero-inner,.container,.footer-inner{width:min(100% - 32px,1060px)}main{padding:42px 0 58px}.topic-grid{grid-template-columns:1fr;gap:10px}.topic{min-height:auto;padding:18px}.schedule-row{grid-template-columns:1fr;gap:5px;padding:16px}.form-wrap{grid-template-columns:1fr;gap:20px;padding:21px 17px}.form-aside{padding:0}.checks{grid-template-columns:1fr}.hero-meta{display:grid;gap:9px}}
+  </style>
+</head>
+<body>
+  <div class="notice">교육용 예시 페이지입니다</div>
+  <header class="hero"><div class="hero-inner">
+    <div class="eyebrow">DUDU SOLUTION · ONLINE SEMINAR</div>
+    <h1>클라우드로 옮기기 전에,<br><span>보안부터</span></h1>
+    <p class="hero-copy">클라우드 전환을 준비하고 있다면, 가장 먼저 점검해야 할 것은 보안입니다. 전환 전 필수 점검 사항부터 기업 환경별 보안 위협과 대응 전략까지 실무 관점에서 살펴봅니다.</p>
+    <div class="hero-meta"><span><b>◷</b> 2026년 11월 19일(목) 14:00–15:30</span><span><b>◎</b> 온라인 라이브 · 90분</span><span><b>₩</b> 참가비 무료</span></div>
+    <a class="hero-cta" href="#apply">무료 세미나 신청하기&nbsp; →</a>
+  </div></header>
+  <main><div class="container">
+    <section class="section"><p class="section-kicker">ABOUT THE SEMINAR</p><h2>안전한 클라우드 전환을 위한 실무 가이드</h2>
+      <p class="intro">NextIT 2026에서는 클라우드 이전 단계에서 반드시 확인해야 할 보안 요소부터 기업 환경별 보안 위협, 실제 솔루션 도입 사례와 구축 전략까지 실무 중심으로 살펴봅니다. 클라우드 보안 전략을 점검하고 싶은 기업 IT·보안 담당자와 팀장을 초대합니다.</p>
+      <div class="topic-grid">
+        <article class="topic"><span class="num">SESSION 01</span><h3>클라우드 전환 전 보안 점검</h3><p>이전 단계에서 확인해야 할 핵심 보안 요소와 체크포인트</p></article>
+        <article class="topic"><span class="num">SESSION 02</span><h3>기업 환경별 위협과 사례</h3><p>기업 환경에서 발생할 수 있는 보안 위협과 솔루션 도입 사례</p></article>
+        <article class="topic"><span class="num">SESSION 03</span><h3>클라우드 보안 구축 전략</h3><p>안전한 전환을 위한 구축 방향과 실무 Q&amp;A</p></article>
+      </div>
+    </section>
+    <section class="section"><p class="section-kicker">PROGRAM</p><h2>90분 프로그램</h2><div class="schedule">
+      <div class="schedule-row"><div class="schedule-time">14:00–14:10 · 10분</div><div><p class="schedule-title">오프닝</p><p class="schedule-desc">행사 소개 및 클라우드 보안 트렌드</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">14:10–14:35 · 25분</div><div><p class="schedule-title">세션 1. 클라우드 전환 전 보안 점검</p><p class="schedule-desc">클라우드 이전 전 반드시 확인해야 할 보안 요소</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">14:35–15:00 · 25분</div><div><p class="schedule-title">세션 2. 기업 환경별 보안 위협 및 도입 사례</p><p class="schedule-desc">보안 위협 유형과 솔루션 적용 사례</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">15:00–15:20 · 20분</div><div><p class="schedule-title">세션 3. 클라우드 보안 구축 전략 및 Q&amp;A</p><p class="schedule-desc">기업 환경에 맞는 보안 구축 방향과 질의응답</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">15:20–15:30 · 10분</div><div><p class="schedule-title">클로징</p><p class="schedule-desc">만족도 조사 및 도입 상담 안내</p></div></div>
+    </div></section>
+    <section class="section" id="apply"><p class="section-kicker">REGISTRATION</p><h2>세미나 사전 신청</h2><div class="form-wrap">
+      <div class="form-aside"><h3 style="margin:0;color:#102b52;font-size:21px;">NextIT 2026에<br>참여해 보세요.</h3><p>아래 정보를 입력해 신청해 주세요. 입력하신 내용은 교육용 예시 페이지에서 실제로 전송되거나 저장되지 않습니다.</p><span class="free">무료 온라인 세미나</span></div>
+      <div><form id="registrationForm">
+        <div class="field"><label for="name">이름 <span class="required">*</span></label><input id="name" name="name" type="text" placeholder="이름을 입력해 주세요" autocomplete="name" required></div>
+        <div class="field"><label for="company">회사명 <span class="required">*</span></label><input id="company" name="company" type="text" placeholder="회사명을 입력해 주세요" autocomplete="organization" required></div>
+        <div class="field"><label for="role">부서와 직무 <span class="required">*</span></label><input id="role" name="role" type="text" placeholder="예: IT인프라팀 / 시스템 운영" required></div>
+        <div class="field"><label for="email">업무용 이메일 <span class="required">*</span></label><input id="email" name="email" type="email" placeholder="name@company.com" autocomplete="email" required></div>
+        <fieldset class="field"><legend>관심 분야 <span class="required">*</span> <span style="font-weight:400;color:#8793a4;">(복수 선택 가능)</span></legend><div class="checks">
+          <label class="check"><input type="checkbox" name="interest" value="클라우드 전환">클라우드 전환</label><label class="check"><input type="checkbox" name="interest" value="클라우드 보안">클라우드 보안</label><label class="check"><input type="checkbox" name="interest" value="데이터 보호 및 백업">데이터 보호 및 백업</label><label class="check"><input type="checkbox" name="interest" value="접근 권한 및 계정 관리">접근 권한 및 계정 관리</label><label class="check"><input type="checkbox" name="interest" value="보안 솔루션 도입 사례">보안 솔루션 도입 사례</label><label class="check"><input type="checkbox" name="interest" value="기타">기타</label>
+        </div></fieldset>
+        <div class="field"><label for="timing">도입 검토 시기 <span class="required">*</span></label><select id="timing" name="timing" required><option value="">선택해 주세요</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option><option>1년 이후</option><option>현재 도입 계획 없음 / 정보 수집 단계</option></select></div>
+        <button class="submit" type="submit">신청하기</button><p class="privacy">* 본 페이지는 교육용 예시로, 신청 정보가 서버로 전송되지 않습니다.</p>
+      </form><div class="success" id="successMessage" role="status" aria-live="polite"><strong>신청이 완료되었습니다!</strong>NextIT 2026에 관심을 가져주셔서 감사합니다.<br>본 페이지는 교육용 예시이며 신청 정보는 실제로 전송되지 않았습니다.</div></div>
+    </div></section>
+  </div></main>
+  <footer><div class="footer-inner"><span>© 2026 DUDU SOLUTION. EDUCATIONAL DEMO.</span><span>NextIT 2026 · 클라우드로 옮기기 전에, 보안부터</span></div></footer>
+  <script>
+    const form=document.getElementById('registrationForm');
+    const successMessage=document.getElementById('successMessage');
+    form.addEventListener('submit',function(event){
+      event.preventDefault();
+      const checkedInterests=form.querySelectorAll('input[name="interest"]:checked');
+      if(checkedInterests.length===0){alert('관심 분야를 하나 이상 선택해 주세요.');return;}
+      form.hidden=true;successMessage.style.display='block';
+      successMessage.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  </script>
+</body>
+</html>
