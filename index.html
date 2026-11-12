@@ -65,30 +65,65 @@
       <div class="schedule-row"><div class="schedule-time">15:20–15:30 · 10분</div><div><p class="schedule-title">클로징</p><p class="schedule-desc">만족도 조사 및 도입 상담 안내</p></div></div>
     </div></section>
     <section class="section" id="apply"><p class="section-kicker">REGISTRATION</p><h2>세미나 사전 신청</h2><div class="form-wrap">
-      <div class="form-aside"><h3 style="margin:0;color:#102b52;font-size:21px;">NextIT 2026에<br>참여해 보세요.</h3><p>아래 정보를 입력해 신청해 주세요. 입력하신 내용은 교육용 예시 페이지에서 실제로 전송되거나 저장되지 않습니다.</p><span class="free">무료 온라인 세미나</span></div>
-      <div><form id="registrationForm">
-        <div class="field"><label for="name">이름 <span class="required">*</span></label><input id="name" name="name" type="text" placeholder="이름을 입력해 주세요" autocomplete="name" required></div>
-        <div class="field"><label for="company">회사명 <span class="required">*</span></label><input id="company" name="company" type="text" placeholder="회사명을 입력해 주세요" autocomplete="organization" required></div>
-        <div class="field"><label for="role">부서와 직무 <span class="required">*</span></label><input id="role" name="role" type="text" placeholder="예: IT인프라팀 / 시스템 운영" required></div>
-        <div class="field"><label for="email">업무용 이메일 <span class="required">*</span></label><input id="email" name="email" type="email" placeholder="name@company.com" autocomplete="email" required></div>
+      <div class="form-aside"><h3 style="margin:0;color:#102b52;font-size:21px;">NextIT 2026에<br>참여해 보세요.</h3><p>아래 정보를 입력해 신청해 주세요. 신청 내용은 Google Forms를 통해 접수되며, 연결된 Google Sheets에 기록됩니다.</p><span class="free">무료 온라인 세미나</span></div>
+      <div><form id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdYXbiRQRK9IVjAJH2aclaipZCc9DLaosYRQ1YG8aVqifdvcQ/formResponse" method="POST" target="googleFormFrame" accept-charset="UTF-8">
+        <input type="hidden" name="entry.1129226244" id="interestPayload">
+        <input type="hidden" name="entry.1359054844" id="utmSource">
+        <input type="hidden" name="entry.1135207073" id="utmMedium">
+        <input type="hidden" name="entry.736594324" id="utmCampaign">
+        <div class="field"><label for="name">이름 <span class="required">*</span></label><input id="name" name="entry.1179709418" type="text" placeholder="이름을 입력해 주세요" autocomplete="name" required></div>
+        <div class="field"><label for="company">회사명 <span class="required">*</span></label><input id="company" name="entry.1258722597" type="text" placeholder="회사명을 입력해 주세요" autocomplete="organization" required></div>
+        <div class="field"><label for="role">부서와 직무 <span class="required">*</span></label><input id="role" name="entry.1201561323" type="text" placeholder="예: IT인프라팀 / 시스템 운영" required></div>
+        <div class="field"><label for="email">업무용 이메일 <span class="required">*</span></label><input id="email" name="entry.1399458270" type="email" placeholder="name@company.com" autocomplete="email" required></div>
         <fieldset class="field"><legend>관심 분야 <span class="required">*</span> <span style="font-weight:400;color:#8793a4;">(복수 선택 가능)</span></legend><div class="checks">
-          <label class="check"><input type="checkbox" name="interest" value="클라우드 전환">클라우드 전환</label><label class="check"><input type="checkbox" name="interest" value="클라우드 보안">클라우드 보안</label><label class="check"><input type="checkbox" name="interest" value="데이터 보호 및 백업">데이터 보호 및 백업</label><label class="check"><input type="checkbox" name="interest" value="접근 권한 및 계정 관리">접근 권한 및 계정 관리</label><label class="check"><input type="checkbox" name="interest" value="보안 솔루션 도입 사례">보안 솔루션 도입 사례</label><label class="check"><input type="checkbox" name="interest" value="기타">기타</label>
+          <label class="check"><input type="checkbox" data-interest value="클라우드 전환">클라우드 전환</label><label class="check"><input type="checkbox" data-interest value="클라우드 보안">클라우드 보안</label><label class="check"><input type="checkbox" data-interest value="데이터 보호 및 백업">데이터 보호 및 백업</label><label class="check"><input type="checkbox" data-interest value="접근 권한 및 계정 관리">접근 권한 및 계정 관리</label><label class="check"><input type="checkbox" data-interest value="보안 솔루션 도입 사례">보안 솔루션 도입 사례</label><label class="check"><input type="checkbox" data-interest value="기타">기타</label>
         </div></fieldset>
-        <div class="field"><label for="timing">도입 검토 시기 <span class="required">*</span></label><select id="timing" name="timing" required><option value="">선택해 주세요</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option><option>1년 이후</option><option>현재 도입 계획 없음 / 정보 수집 단계</option></select></div>
-        <button class="submit" type="submit">신청하기</button><p class="privacy">* 본 페이지는 교육용 예시로, 신청 정보가 서버로 전송되지 않습니다.</p>
-      </form><div class="success" id="successMessage" role="status" aria-live="polite"><strong>신청이 완료되었습니다!</strong>NextIT 2026에 관심을 가져주셔서 감사합니다.<br>본 페이지는 교육용 예시이며 신청 정보는 실제로 전송되지 않았습니다.</div></div>
+        <div class="field"><label for="timing">도입 검토 시기 <span class="required">*</span></label><select id="timing" name="entry.398699166" required><option value="">선택해 주세요</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option><option>1년 이후</option><option>현재 도입 계획 없음 / 정보 수집 단계</option></select></div>
+        <button class="submit" type="submit">신청하기</button><p class="privacy">* 신청 정보는 구글 폼을 통해 접수되며 연결된 구글 시트에 기록됩니다.</p>
+      </form>
+      <iframe name="googleFormFrame" id="googleFormFrame" title="신청 정보 전송" style="display:none" aria-hidden="true"></iframe>
+      <div class="success" id="successMessage" role="status" aria-live="polite"><strong>신청 정보 전송이 완료되었습니다!</strong>NextIT 2026에 관심을 가져주셔서 감사합니다.<br>접수 내역은 운영자의 Google Sheets에서 확인할 수 있습니다.</div></div>
     </div></section>
   </div></main>
   <footer><div class="footer-inner"><span>© 2026 DUDU SOLUTION. EDUCATIONAL DEMO.</span><span>NextIT 2026 · 클라우드로 옮기기 전에, 보안부터</span></div></footer>
   <script>
-    const form=document.getElementById('registrationForm');
-    const successMessage=document.getElementById('successMessage');
-    form.addEventListener('submit',function(event){
-      event.preventDefault();
-      const checkedInterests=form.querySelectorAll('input[name="interest"]:checked');
-      if(checkedInterests.length===0){alert('관심 분야를 하나 이상 선택해 주세요.');return;}
-      form.hidden=true;successMessage.style.display='block';
-      successMessage.scrollIntoView({behavior:'smooth',block:'center'});
+    const form = document.getElementById('registrationForm');
+    const successMessage = document.getElementById('successMessage');
+    const googleFormFrame = document.getElementById('googleFormFrame');
+    let waitingForGoogleResponse = false;
+
+    // Google Forms 응답이 숨겨진 iframe에 도착하면 완료 안내를 표시합니다.
+    googleFormFrame.addEventListener('load', function () {
+      if (!waitingForGoogleResponse) return;
+      waitingForGoogleResponse = false;
+      form.hidden = true;
+      successMessage.style.display = 'block';
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    form.addEventListener('submit', function (event) {
+      const checkedInterests = form.querySelectorAll('input[data-interest]:checked');
+      if (checkedInterests.length === 0) {
+        event.preventDefault();
+        alert('관심 분야를 하나 이상 선택해 주세요.');
+        return;
+      }
+
+      // 여러 관심 분야를 하나의 단답형 Google Forms 항목으로 합칩니다.
+      document.getElementById('interestPayload').value =
+        Array.from(checkedInterests).map(function (item) { return item.value; }).join(', ');
+
+      // 페이지 주소의 UTM 값을 숨은 입력칸에 담아 함께 전송합니다.
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById('utmSource').value = params.get('utm_source') || '';
+      document.getElementById('utmMedium').value = params.get('utm_medium') || '';
+      document.getElementById('utmCampaign').value = params.get('utm_campaign') || '';
+
+      // 유효한 제출은 기본 form POST로 숨겨진 iframe에 전송합니다.
+      waitingForGoogleResponse = true;
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = '신청 정보 전송 중...';
     });
   </script>
 </body>
